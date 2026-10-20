@@ -205,14 +205,8 @@ app.post(
             });
         }
 
-        if (!req.file) {
-            return res.status(400).json({
-                success: false,
-                message: "Zgjidh një file"
-            });
-        }
-
-        const image = req.file.filename;
+    
+        const image = req.file ? req.file.filename : null;
 
         const sql = `
             INSERT INTO aplikacionet
