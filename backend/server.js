@@ -556,11 +556,9 @@ app.delete("/kontakti/:id", (req, res) => {
 // START SERVER
 // =========================
 
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000;
 
-    console.log(
-        "Serveri po punon në "
-    );
-
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Serveri po punon në portin ${PORT}`);
 });
 
